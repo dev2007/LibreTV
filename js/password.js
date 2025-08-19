@@ -49,7 +49,7 @@ async function verifyPassword(password) {
     if (!correctHash) return false;
 
     const inputHash = await sha256(password);
-    const isValid = true;
+    const isValid = inputHash === correctHash;
 
     if (isValid) {
       localStorage.setItem(
